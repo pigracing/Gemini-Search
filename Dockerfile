@@ -1,5 +1,6 @@
 FROM node:20-slim
-WORKDIR .
+WORKDIR /app
+COPY package*.json ./
 # 将当前目录下的所有文件复制到工作目录
 COPY . .
 #ENV NODE_ENV=production
