@@ -4,8 +4,8 @@ WORKDIR /app
 COPY . .
 ENV NODE_ENV=production
 RUN npm install
-RUN npm run build
+#RUN npm run build
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "dev"]
