@@ -1,10 +1,11 @@
-FROM node:20-slim AS base
-WORKDIR /Gemini-Search
-FROM base AS prod-deps
+FROM node:20-slim
+WORKDIR /app
+# 将当前目录下的所有文件复制到工作目录
+COPY . .
+ENV NODE_ENV=production
 RUN npm install
-
-FROM base AS deploy
-RUN npm run dev
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
+
+CMD ["npm", "start"]
