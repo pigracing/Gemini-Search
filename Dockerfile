@@ -1,8 +1,8 @@
 FROM node:20-slim
-#WORKDIR /app
+WORKDIR /app
 #COPY package*.json ./
 # 将当前目录下的所有文件复制到工作目录
-COPY . .
+COPY . /app
 #ENV NODE_ENV=production
 RUN npm install
 #RUN npm run build
